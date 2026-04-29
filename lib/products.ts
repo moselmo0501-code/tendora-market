@@ -714,6 +714,29 @@ export const products: Product[] = [
     ],
     stock: "en stock", rating: 4.6, reviews: 234,
   },
+
+  // ─── MODE & VÊTEMENTS ──────────────────────────────────────
+  {
+    id: "53", name: "T-shirt homme 100% coton premium", slug: "tshirt-homme-coton",
+    category: "mode", price: 24.99, comparePrice: 34.99,
+    description: "T-shirt homme 100% coton doux et respirant. Coupe décontractée, parfait pour l'été. Disponible en 9 couleurs et 8 tailles (S à 5XL). Vendu par AIOPESON Official Store — 10 000+ vendus, note 4.7/5.",
+    features: [
+      "100% coton doux",
+      "9 couleurs disponibles",
+      "Tailles S à 5XL",
+      "Col rond confortable",
+      "Manches courtes légères",
+      "Lavable en machine",
+    ],
+    badge: "best-seller",
+    image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&h=600&fit=crop",
+    images: [
+      "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1562157873-818bc0726f68?w=600&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=600&h=600&fit=crop",
+    ],
+    stock: "en stock", rating: 4.7, reviews: 2329,
+  },
 ];
 
 export function getProductBySlug(slug: string): Product | undefined {

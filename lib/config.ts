@@ -21,6 +21,7 @@ export const siteConfig = {
     { slug: "cuisine", label: "Cuisine & Food", emoji: "🍳" },
     { slug: "voyage", label: "Voyage & Outdoor", emoji: "✈️" },
     { slug: "bebe", label: "Bébé & Enfants", emoji: "👶" },
+    { slug: "mode", label: "Mode & Vêtements", emoji: "👕" },
   ],
   advantages: [
     {
