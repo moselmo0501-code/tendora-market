@@ -87,7 +87,7 @@ export const products: Product[] = [
   },
   {
     id: "6", name: "Brosse autonettoyante poils", slug: "brosse-autonettoyante",
-    category: "animaux", price: 16.99, comparePrice: 24.99,
+    category: "animaux", price: 11.99, comparePrice: 29.99,
     description: "Brosse à picots rétractables d'un simple bouton. Collecte les poils sans effort.",
     features: ["Rétractation 1 bouton", "Poils acier inox", "Ergonomique", "Chats et chiens"],
     badge: "best-seller",
