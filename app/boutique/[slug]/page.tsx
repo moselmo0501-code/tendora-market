@@ -1,6 +1,6 @@
 "use client";
 
-import { use } from "react";
+import { use, useState } from "react";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import Link from "next/link";
@@ -19,6 +19,8 @@ export default function ProductPage({
   if (!product) notFound();
 
   const { addItem } = useCart();
+  const allImages = [product.image, ...(product.images ?? [])];
+  const [selected, setSelected] = useState(0);
 
   const discount = product.comparePrice
     ? Math.round((1 - product.price / product.comparePrice) * 100)
@@ -32,41 +34,65 @@ export default function ProductPage({
     <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10">
       {/* Breadcrumb */}
       <nav className="text-sm text-gray-500 mb-6 flex items-center gap-2">
-        <Link href="/" className="hover:text-violet-600">
-          Accueil
-        </Link>
+        <Link href="/" className="hover:text-violet-600">Accueil</Link>
         <span>/</span>
-        <Link href="/boutique" className="hover:text-violet-600">
-          Boutique
-        </Link>
+        <Link href="/boutique" className="hover:text-violet-600">Boutique</Link>
         <span>/</span>
         <span className="text-gray-900 font-medium line-clamp-1">{product.name}</span>
       </nav>
 
       <div className="grid md:grid-cols-2 gap-10">
-        {/* Image */}
-        <div className="relative aspect-square rounded-2xl overflow-hidden bg-gray-100">
-          <Image
-            src={product.image}
-            alt={product.name}
-            fill
-            className="object-cover"
-            priority
-            sizes="(max-width: 768px) 100vw, 50vw"
-          />
-          {product.badge && (
-            <div className="absolute top-3 left-3">
-              <Badge badge={product.badge} />
-            </div>
-          )}
-          {discount && (
-            <div className="absolute top-3 right-3 bg-red-500 text-white text-sm font-bold px-2 py-1 rounded-full">
-              -{discount}%
+        {/* Galerie photos */}
+        <div className="flex flex-col gap-3">
+          {/* Photo principale */}
+          <div className="relative aspect-square rounded-2xl overflow-hidden bg-gray-100">
+            <Image
+              src={allImages[selected]}
+              alt={`${product.name} - photo ${selected + 1}`}
+              fill
+              className="object-cover transition-opacity duration-200"
+              priority
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+            {product.badge && (
+              <div className="absolute top-3 left-3">
+                <Badge badge={product.badge} />
+              </div>
+            )}
+            {discount && (
+              <div className="absolute top-3 right-3 bg-red-500 text-white text-sm font-bold px-2 py-1 rounded-full">
+                -{discount}%
+              </div>
+            )}
+          </div>
+
+          {/* Miniatures */}
+          {allImages.length > 1 && (
+            <div className="flex gap-2 overflow-x-auto pb-1">
+              {allImages.map((img, i) => (
+                <button
+                  key={i}
+                  onClick={() => setSelected(i)}
+                  className={`relative w-16 h-16 shrink-0 rounded-xl overflow-hidden border-2 transition-all ${
+                    selected === i
+                      ? "border-violet-600 scale-105"
+                      : "border-gray-200 hover:border-gray-400"
+                  }`}
+                >
+                  <Image
+                    src={img}
+                    alt={`miniature ${i + 1}`}
+                    fill
+                    className="object-cover"
+                    sizes="64px"
+                  />
+                </button>
+              ))}
             </div>
           )}
         </div>
 
-        {/* Infos */}
+        {/* Infos produit */}
         <div className="flex flex-col gap-5">
           {category && (
             <Link
@@ -113,11 +139,9 @@ export default function ProductPage({
           </ul>
 
           <div className="flex items-center gap-2">
-            <span
-              className={`w-2 h-2 rounded-full ${
-                product.stock === "en stock" ? "bg-emerald-500" : "bg-red-400"
-              }`}
-            />
+            <span className={`w-2 h-2 rounded-full ${
+              product.stock === "en stock" ? "bg-emerald-500" : "bg-red-400"
+            }`} />
             <span className="text-sm text-gray-600 capitalize">{product.stock}</span>
           </div>
 
