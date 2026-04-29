@@ -3,7 +3,7 @@ export const siteConfig = {
   tagline: "Des produits tendance, livrés chez vous",
   description:
     "Boutique en ligne proposant des produits tendance et rentables via dropshipping et print-on-demand, sans gestion de stock.",
-  url: "https://trendora-market.com",
+  url: "https://tendora-market.vercel.app",
   email: "contact@trendora-market.com",
   socials: {
     instagram: "https://instagram.com/trendoramarket",
@@ -16,6 +16,11 @@ export const siteConfig = {
     { slug: "maison", label: "Organisation maison", emoji: "🏠" },
     { slug: "deco", label: "Déco & Cadeaux", emoji: "🎁" },
     { slug: "eco", label: "Éco-responsable", emoji: "🌿" },
+    { slug: "fitness", label: "Sport & Fitness", emoji: "💪" },
+    { slug: "beaute", label: "Beauté & Bien-être", emoji: "✨" },
+    { slug: "cuisine", label: "Cuisine & Food", emoji: "🍳" },
+    { slug: "voyage", label: "Voyage & Outdoor", emoji: "✈️" },
+    { slug: "bebe", label: "Bébé & Enfants", emoji: "👶" },
   ],
   advantages: [
     {
