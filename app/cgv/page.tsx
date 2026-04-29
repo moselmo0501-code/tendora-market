@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Conditions Générales de Vente",
-  description: "CGV de Trendora Market — droits et obligations des parties.",
+  description: "CGV de Trenova Market — droits et obligations des parties.",
 };
 
 export default function CgvPage() {

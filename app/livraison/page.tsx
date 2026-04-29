@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Livraison & Retours",
-  description: "Politique de livraison et de retours de Trendora Market.",
+  description: "Politique de livraison et de retours de Trenova Market.",
 };
 
 export default function LivraisonPage() {

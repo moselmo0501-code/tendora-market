@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
     const resend = getResend();
 
     await resend.emails.send({
-      from: `${siteConfig.name} <noreply@trendora-market.com>`,
+      from: `${siteConfig.name} <noreply@trenova-market.com>`,
       to: siteConfig.email,
       replyTo: email,
       subject: `[Contact] ${sujet ?? "Sans sujet"} — ${prenom} ${nom}`,
@@ -51,7 +51,7 @@ export async function POST(req: NextRequest) {
 
     // Email de confirmation à l'expéditeur
     await resend.emails.send({
-      from: `${siteConfig.name} <noreply@trendora-market.com>`,
+      from: `${siteConfig.name} <noreply@trenova-market.com>`,
       to: email,
       subject: `Votre message a bien été reçu — ${siteConfig.name}`,
       html: `

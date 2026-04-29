@@ -3,7 +3,7 @@ import { siteConfig } from "@/lib/config";
 
 export const metadata: Metadata = {
   title: "Politique de confidentialité",
-  description: "Comment Trendora Market collecte et utilise vos données personnelles.",
+  description: "Comment Trenova Market collecte et utilise vos données personnelles.",
 };
 
 export default function ConfidentialitePage() {

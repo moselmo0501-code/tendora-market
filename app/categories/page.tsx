@@ -5,7 +5,7 @@ import { products } from "@/lib/products";
 
 export const metadata: Metadata = {
   title: "Catégories",
-  description: "Explorez toutes les catégories de produits Trendora Market.",
+  description: "Explorez toutes les catégories de produits Trenova Market.",
 };
 
 export default function CategoriesPage() {

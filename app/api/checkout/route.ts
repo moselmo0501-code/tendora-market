@@ -43,7 +43,7 @@ export async function POST(req: NextRequest) {
         ],
       },
       metadata: {
-        source: "trendora_market",
+        source: "trenova_market",
       },
     });
 

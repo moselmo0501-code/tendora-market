@@ -1,14 +1,14 @@
 export const siteConfig = {
-  name: "Trendora Market",
+  name: "Trenova Market",
   tagline: "Des produits tendance, livrés chez vous",
   description:
     "Boutique en ligne proposant des produits tendance et rentables via dropshipping et print-on-demand, sans gestion de stock.",
-  url: "https://tendora-market.vercel.app",
-  email: "contact@trendora-market.com",
+  url: "https://trenova-market.vercel.app",
+  email: "contact@trenova-market.com",
   socials: {
-    instagram: "https://instagram.com/trendoramarket",
-    tiktok: "https://tiktok.com/@trendoramarket",
-    facebook: "https://facebook.com/trendoramarket",
+    instagram: "https://instagram.com/trenovamarket",
+    tiktok: "https://tiktok.com/@trenovamarket",
+    facebook: "https://facebook.com/trenovamarket",
   },
   categories: [
     { slug: "animaux", label: "Accessoires animaux", emoji: "🐾" },
